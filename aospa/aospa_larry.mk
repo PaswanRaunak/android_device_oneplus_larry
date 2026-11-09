@@ -114,7 +114,9 @@ BOARD_PREBUILT_DTBOIMAGE := device/oneplus/larry/prebuilt/dtbo.img
 BOARD_PREBUILT_DTBIMAGE_DIR := device/oneplus/larry/prebuilt/dtb
 BOARD_VENDOR_KERNEL_MODULES := $(wildcard device/oneplus/larry/prebuilt/modules/*.ko)
 TARGET_PREBUILT_KERNEL := device/oneplus/larry/prebuilt/Image
+TARGET_PREBUILT_KERNEL_HEADERS := device/oneplus/larry/prebuilt/kernel-headers.tar.gz
 TARGET_NO_KERNEL_OVERRIDE := true
+PRODUCT_ENABLE_UFFD_GC := true
 
 # Lineage Soong variable exports for vendor/lineage/build/soong (lineage_generator)
 KERNEL_ARCH ?= arm64
@@ -162,3 +164,17 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom/wlan/qcwcn \
     hardware/qcom/wlan/qcwcn/wpa_supplicant_8_lib \
     vendor/qcom/opensource/dataservices
+
+# Qualcomm Display HAL (hardware/qcom-caf/sm8350/display) Soong configuration
+$(call soong_config_set,qtidisplay,default,true)
+$(call soong_config_set,qtidisplay,gralloc4,true)
+$(call soong_config_set,qtidisplay,drmpp,true)
+$(call soong_config_set,qtidisplay,headless,false)
+$(call soong_config_set,qtidisplay,llvmsa,false)
+$(call soong_config_set,qtidisplay,udfps,false)
+
+# Qualcomm UFS BSG framework for recovery
+$(call soong_config_set,ufsbsg,ufsframework,bsg)
+
+# Qualcomm Audio HAL (hardware/qcom-caf/sm8350/audio) Soong configuration for GKI kernel
+$(call soong_config_set,qtiaudio,feature_gki,true)

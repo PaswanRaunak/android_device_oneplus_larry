@@ -43,3 +43,4 @@ e13c20a2838b149eab358349a12842137cfa26b63848303466ff9c677c46589e  /home/ubuntu/p
 ab2647bba44c240cc2329e4fe0797ff02cc496e7d74829636c9d290d9913932e  /home/ubuntu/penguinos/device/oneplus/larry/prebuilt/modules/wcd9xxx_dlkm.ko
 2e59e83664915175d2ac37238bbf8993042e078e16bf9c2b60e920c8fdb04ac3  /home/ubuntu/penguinos/device/oneplus/larry/prebuilt/modules/wcd_core_dlkm.ko
 315f04c9fcf1ab3a49c0863bca916d80cc0da79b8b6fe6dba2515116911e4980  /home/ubuntu/penguinos/device/oneplus/larry/prebuilt/modules/wsa881x_analog_dlkm.ko
+1ca22862b52db75b71bd8c5d64168e374cba4a21ab32114aca76c2bcfb2799de  /home/ubuntu/penguinos/device/oneplus/larry/prebuilt/kernel-headers.tar.gz
